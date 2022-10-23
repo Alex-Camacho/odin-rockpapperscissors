@@ -1,6 +1,4 @@
 //Function generar random piedra-papel-tijera
-
-
 function getComputerChoice(){
     let computerSelection;
     let randomNumber = Math.floor(Math.random() * 100) +1;
@@ -11,39 +9,52 @@ function getComputerChoice(){
     }
     return computerSelection = "scissors";  
 }
-
-//Fuction jugar una ronda, que compare 2 parametros (playerSelection y 
-//computerSelection) y return string de ganador o perdedor.
-
+//Función de ronda
 function playRound(){
     let computerSelection = getComputerChoice();
-    let promptPlayer = prompt("Rock, paper or scissors?");
-    let playerSelection = promptPlayer.toLowerCase();
     if(playerSelection == "rock" && computerSelection == "scissors"){
         alert("You win! Rock beats scissors.");
-    } else if (playerSelection == "rock" && computerSelection == "rock"){
+        playerScore += 1;
+    } else if (playerSelection == computerSelection){
         alert("It's a tie!");
     } else if (playerSelection == "rock" && computerSelection == "paper"){
         alert("You lose! Paper beats rock.");
+        computerScore += 1;
     } else if (playerSelection == "paper" && computerSelection == "rock"){
         alert("You win! Paper beats rock.");
-    } else if (playerSelection == "paper" && computerSelection == "paper"){
-        alert("It's a tie!");
+        playerScore += 1;
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
         alert("You lose! Scissors beats paper.");
+        computerScore += 1;
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
         alert("You win! Scissors beats paper.");
-    } else if (playerSelection == "scissors" && computerSelection == "scissors"){
-        alert("It's a tie!");
+        playerScore += 1;
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
         alert("You lose! Rock beats scissors.");
-    }
-}
-//Como hacer que repita el juego 5 veces
-function game (){
-    for(i = 0; i < 5; i++){
-        playRound();
+        computerScore += 1;
     }
 }
 
-game();
+let playerScore = document.getElementsByClassName("playerScore");
+playerScore.textContent = playerScore;
+let computerScore = document.getElementsByClassName("computerScore");
+
+let playerSelection;
+
+let buttonrock = document.getElementById("btnrock");
+let buttonpaper = document.getElementById("btnpaper");
+let buttonsci = document.getElementById("btnsci");
+
+buttonrock.addEventListener("click", () => {
+    playerSelection = "rock";
+    playRound();
+});
+buttonpaper.addEventListener("click", () => {
+    playerSelection = "paper";
+    playRound();
+});
+
+buttonsci.addEventListener("click", () => {
+    playerSelection = "scissors";
+    playRound();
+});
