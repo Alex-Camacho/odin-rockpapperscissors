@@ -15,24 +15,31 @@ function playRound(){
     if(playerSelection == "rock" && computerSelection == "scissors"){
         playerScore += 1;
         document.getElementById("roundResult").textContent = "You win! Rock beats scissors.";
+        document.getElementById("round").style.backgroundColor = "green";
     } else if (playerSelection == computerSelection){
         document.getElementById("roundResult").textContent = "It's a tie!";
+        document.getElementById("round").style.backgroundColor = "black";
     } else if (playerSelection == "rock" && computerSelection == "paper"){
         computerScore += 1;
         document.getElementById("roundResult").textContent = "You lose! Paper beats rock."
+        document.getElementById("round").style.backgroundColor = "red";
     } else if (playerSelection == "paper" && computerSelection == "rock"){
         playerScore += 1;
         document.getElementById("roundResult").textContent = "You win! Paper beats rock."
+        document.getElementById("round").style.backgroundColor = "green";
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
         computerScore += 1;
         document.getElementById("roundResult").textContent = "You lose! Scissors beats paper."
+        document.getElementById("round").style.backgroundColor = "red";
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
         alert("You win! Scissors beats paper.");
         playerScore += 1;
         document.getElementById("roundResult").textContent = "You win! Scissors beats paper."
+        document.getElementById("round").style.backgroundColor = "green";
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
         computerScore += 1;
         document.getElementById("roundResult").textContent = "You lose! Rock beats scissors."
+        document.getElementById("round").style.backgroundColor = "red";
     }
     update();
 }
