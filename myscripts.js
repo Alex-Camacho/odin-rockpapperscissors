@@ -32,7 +32,6 @@ function playRound(){
         document.getElementById("roundResult").textContent = "You lose! Scissors beats paper."
         document.getElementById("round").style.backgroundColor = "red";
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
-        alert("You win! Scissors beats paper.");
         playerScore += 1;
         document.getElementById("roundResult").textContent = "You win! Scissors beats paper."
         document.getElementById("round").style.backgroundColor = "green";
