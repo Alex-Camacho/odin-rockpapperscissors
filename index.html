@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Papper Scissors</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <div class="score">
-        <span id="playerScore"></span>
-        <span id="computerScore"></span>
+        <div class="player">
+            <span id="playerScore"></span>
+        </div> 
+        <div class="computer"> 
+            <span id="computerScore"></span>
+        </div>    
     </div>
     <div class="buttons">
-        <button id="btnrock">Rock</button>
-        <button id="btnpaper">Paper</button>
-        <button id="btnsci">Scissors</button>
+        <div class="rock">
+            <img src="images/rock.png" alt="rock" width="200px" height="200px" >
+            <button id="btnrock">Rock</button>
+        </div>
+        <div class="paper">
+            <img src="images/paper.png" alt="paper" width="200px" height="200px">    
+            <button id="btnpaper">Paper</button>
+        </div>    
+        <div class="scissors">
+            <img src="images/scissors.png" alt="scissors" width="200px" height="200px" >
+            <button id="btnsci">Scissors</button>
+        </div>    
+    </div>
+    <div class="round">
+        <span id="roundResult"></span>
     </div>  
 
     

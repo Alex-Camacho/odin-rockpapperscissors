@@ -13,25 +13,26 @@ function getComputerChoice(){
 function playRound(){
     let computerSelection = getComputerChoice();
     if(playerSelection == "rock" && computerSelection == "scissors"){
-        alert("You win! Rock beats scissors.");
         playerScore += 1;
+        document.getElementById("roundResult").textContent = "You win! Rock beats scissors.";
     } else if (playerSelection == computerSelection){
-        alert("It's a tie!");
+        document.getElementById("roundResult").textContent = "It's a tie!";
     } else if (playerSelection == "rock" && computerSelection == "paper"){
-        alert("You lose! Paper beats rock.");
         computerScore += 1;
+        document.getElementById("roundResult").textContent = "You lose! Paper beats rock."
     } else if (playerSelection == "paper" && computerSelection == "rock"){
-        alert("You win! Paper beats rock.");
         playerScore += 1;
+        document.getElementById("roundResult").textContent = "You win! Paper beats rock."
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        alert("You lose! Scissors beats paper.");
         computerScore += 1;
+        document.getElementById("roundResult").textContent = "You lose! Scissors beats paper."
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
         alert("You win! Scissors beats paper.");
         playerScore += 1;
+        document.getElementById("roundResult").textContent = "You win! Scissors beats paper."
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
-        alert("You lose! Rock beats scissors.");
         computerScore += 1;
+        document.getElementById("roundResult").textContent = "You lose! Rock beats scissors."
     }
     update();
 }
@@ -40,6 +41,12 @@ function playRound(){
 function update(){
     document.getElementById("playerScore").textContent = `Player score: ${playerScore}`;
     document.getElementById("computerScore").textContent = `Computer score: ${computerScore}`;
+    if(playerScore == 5){
+        alert("You reached 5 points. You win!")
+    }
+    else if(computerScore == 5){
+        alert("Computer reached 5 points. You lose!")
+    }
 }
 
 let playerScore = 0;
@@ -66,3 +73,5 @@ buttonsci.addEventListener("click", () => {
     playerSelection = "scissors";
     playRound();
 });
+
+document.getElementById("roundResult").textContent = "Let's play!";
