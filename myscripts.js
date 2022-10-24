@@ -33,12 +33,20 @@ function playRound(){
         alert("You lose! Rock beats scissors.");
         computerScore += 1;
     }
+    update();
 }
 
-let playerScore = document.getElementsByClassName("playerScore");
-playerScore.textContent = playerScore;
-let computerScore = document.getElementsByClassName("computerScore");
+//Función update scores
+function update(){
+    document.getElementById("playerScore").textContent = `Player score: ${playerScore}`;
+    document.getElementById("computerScore").textContent = `Computer score: ${computerScore}`;
+}
 
+let playerScore = 0;
+let computerScore = 0;
+
+document.getElementById("playerScore").textContent = `Player score: ${playerScore}`;
+document.getElementById("computerScore").textContent = `Computer score: ${computerScore}`;
 let playerSelection;
 
 let buttonrock = document.getElementById("btnrock");
